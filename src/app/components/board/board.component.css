@@ -1,0 +1,187 @@
+.ludo-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ludo-board {
+  height: 70vh; /* or any dynamic unit: %, vw, etc. */
+  aspect-ratio: 1 / 1;
+  background-color: #ffff;
+  border: 2px solid var(--primary-color);
+  display: grid;
+  grid-template-areas:
+    "red-board red-board green-path green-board green-board"
+    "red-board red-board green-path green-board green-board"
+    "red-path red-path win-zone yellow-path yellow-path"
+    "blue-board blue-board blue-path yellow-board yellow-board"
+    "blue-board blue-board blue-path yellow-board yellow-board";
+}
+#red-board {
+  grid-area: red-board;
+  background-color: var(--red);
+}
+#yellow-board {
+  grid-area: yellow-board;
+  background-color: var(--yellow);
+}
+#green-board {
+  grid-area: green-board;
+  background-color: var(--green);
+}
+#blue-board {
+  grid-area: blue-board;
+  background-color: var(--blue);
+}
+#red-path {
+  grid-area: red-path;
+}
+#yellow-path {
+  grid-area: yellow-path;
+}
+#blue-path {
+  grid-area: blue-path;
+}
+#green-path {
+  grid-area: green-path;
+}
+#win-zone {
+  grid-area: win-zone;
+}
+.verticalPath {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+.horizontalPath {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3,1fr)
+}
+.board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.board div {
+  height: 70%;
+  width: 70%;
+  background-color: #ffff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.board div span {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  position: relative;
+}
+#yellow-board div span {
+  background-color: var(--yellow);
+}
+#green-board div span {
+  background-color: var(--green);
+}
+#red-board div span {
+  background-color: var(--red);
+}
+#blue-board div span {
+  background-color: var(--blue);
+}
+
+.ludo-box {
+  border: 1px solid #11111142;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ludo-box .fa-location-pin{
+    position: absolute;
+    margin:2px;
+    font-size: 2rem;
+    transform: translate(0,-40%);
+    -webkit-text-stroke-width: 2px;
+    z-index: 100;
+    animation: animateMy .08s linear;
+    -webkit-text-stroke-color: rgb(255,255,255);
+}
+.ludo-box .fa-start{
+    position: absolute;
+    color:#222;
+    opacity: .6;
+}
+@keyframes animateMy {
+    0%{
+        transform: scale(1.1) translate(0,-40%);
+    }
+    100%{
+        transform: scale(1) translate(0,-40%);
+    }
+    
+}
+.ludo-box .fa-location-pin:nth-child(2){
+    transform: translate(10px,-40%);
+}
+.ludo-box .fa-location-pin:nth-child(3){
+    transform: translate(-10px,-40%);
+}
+.ludo-box .fa-location-pin:nth-child(4){
+    transform: translate(0px,-40%) scale(0.8);
+}
+.redLudoBox{
+    background: var(--red);
+}
+.greenLudoBox{
+    background: var(--green);
+}
+.yellowLudoBox{
+    background: var(--yellow);
+}
+.blueLudoBox{
+    background: var(--blue);
+}
+.board .piece{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-90%);
+    font-size: 2.3rem;
+    z-index: 100;
+    -webkit-text-stroke:2px white;
+}
+
+.board.active{
+    animation: animateBoard .8s linear infinite; 
+}
+
+@keyframes animateBoard{
+    0%{
+        filter:brightness(1.4);
+    }
+    50%{
+        filter:brightness(1);
+
+    }
+    100%{
+        filter:brightness(1.4)
+    }
+}
+.red-piece{
+    color: var(--red);
+}
+.yellow-piece{
+    color:var(--yellow)
+}
+.green-piece{
+    color:var(--green)
+}
+.blue-piece{
+    color: var(--blue);
+}

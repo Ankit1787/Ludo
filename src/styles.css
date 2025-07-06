@@ -1,4 +1,8 @@
 :root {
+  --red: #d52313;
+  --yellow: #e0d318;
+  --blue: #3f82e6;
+  --green: #1bd33d;
   --primary-color: #000080;
   --secondary-color:#FDD406;
   --font-size-base: 16px;

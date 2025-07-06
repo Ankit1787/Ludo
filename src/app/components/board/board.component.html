@@ -1,0 +1,71 @@
+<div class="ludo-container">
+  <div class="ludo-board">
+    <!-- red board -->
+    <div id="red-board" class="board">
+      <div>
+        @for(i of discs;track i){
+        <span>
+          <i class="fa-solid fa-location-pin piece red-piece"></i>
+        </span>
+        }
+      </div>
+    </div>
+    <!-- green path -->
+    <div id="green-path" class="verticalPath">
+      @for (i of boxes; track i) {
+      <div class="ludo-box"></div>
+      }
+    </div>
+    <!-- green board -->
+    <div id="green-board" class="board">
+      <div>
+        @for(i of discs;track i){
+        <span>
+          <i class="fa-solid fa-location-pin piece green-piece"></i>
+        </span>
+        }
+      </div>
+    </div>
+    <!-- red-path -->
+    <div id="red-path" class="horizontalPath">
+      @for (i of boxes; track i) {
+      <div class="ludo-box"></div>
+      }
+    </div>
+
+    <!-- win zone -->
+    <div id="win-zone"></div>
+    <!-- yellow path -->
+    <div id="yellow-path" class="horizontalPath">
+      @for (i of boxes; track i) {
+      <div class="ludo-box"></div>
+      }
+    </div>
+    <!-- blue-board -->
+    <div id="blue-board" class="board">
+      <div>
+        @for(i of discs;track i){
+        <span>
+                      <i class="fa-solid fa-location-pin piece blue-piece"></i>
+
+        </span>
+        }
+      </div>
+    </div>
+    <div id="blue-path" class="verticalPath">
+      @for (i of boxes; track i) {
+      <div class="ludo-box"></div>
+      }
+    </div>
+    <div id="yellow-board" class="board">
+      <div>
+        @for(i of discs;track i){
+        <span>
+                      <i class="fa-solid fa-location-pin piece yellow-piece"></i>
+
+        </span>
+        }
+      </div>
+    </div>
+  </div>
+</div>
